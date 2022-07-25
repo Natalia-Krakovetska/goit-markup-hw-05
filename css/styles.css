@@ -14,6 +14,7 @@
   --icon-clr: #afb1b8;
   --card-gap: 30px;
   --card-item: 4;
+  --anim-fast: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Main */
@@ -142,22 +143,15 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
 }
+
+.address .hover,
+.header .hover {
+  transition: color var(--anim-fast);
+}
+
 .navigation-link {
   position: relative;
 }
-
-/* .navigation-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: block;
-  width: 100%;
-  height: 4px;
-  border: none;
-  border-radius: 2px;
-  background-color: var(--logo-clr);
-} */
 
 .navigation-list {
   color: var(--main-txt-clr);
@@ -258,6 +252,7 @@ img {
   background-color: rgba(47, 48, 58, 0.8);
   width: 100%;
   height: 70px;
+  opacity: 80%;
 }
 .operation-text {
   color: var(--btn-clr);
@@ -395,6 +390,8 @@ img {
   letter-spacing: 0.03em;
   background-color: var(--secondary-bgr-clr);
   border-radius: 4px;
+  transition: color var(--anim-fast), background-color var(--anim-fast),
+    box-shadow var(--anim-fast);
 }
 
 .filter-btn:hover,
@@ -416,8 +413,38 @@ img {
   border: 1px solid var(--brd-card-clr);
   border-top: none;
 }
+.service-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform var(--anim-fast);
+  height: 100%;
+  width: 100%;
+  padding: 63px 24px;
+  background-color: var(--logo-clr);
+  opacity: 90%;
+}
+.service-link:hover .overlay,
+.service-link:focus .overlay {
+  transform: translateY(0);
+}
+
+.overlay-text {
+  text-align: left;
+  color: var(--btn-clr);
+  font-size: 18px;
+  line-height: calc(28 / 18);
+  user-select: none;
+}
+
 .service-link {
   display: block;
+  transition: box-shadow var(--anim-fast);
 }
 .service-link:hover,
 .service-link:focus {
@@ -475,6 +502,7 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition: background-color var(--anim-fast);
 }
 
 .footer .socials-link {
@@ -483,6 +511,7 @@ img {
 
 .footer .socials-icon {
   --color1: var(--btn-clr);
+  transition: color var(--anim-fast);
 }
 
 .socials-link:hover,
@@ -507,9 +536,11 @@ img {
   height: 92px;
   border: 1px solid var(--icon-clr);
   border-radius: 4px;
+  transition: border-color var(--anim-fast);
 }
 .clients-icon {
   fill: var(--icon-clr);
+  transition: fill var(--anim-fast);
 }
 .clients-link:hover,
 .clients-link:focus {
