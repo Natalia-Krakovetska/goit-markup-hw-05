@@ -581,3 +581,50 @@ img {
   color: var(--btn-clr);
   margin-bottom: 20px;
 }
+
+/* Backdrop */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity var(--anim-fast);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: var(--btn-clr);
+  border-radius: 4px;
+}
+
+.modal-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 13px;
+  margin-right: 13px;
+  background-color: var(--btn-clr);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
