@@ -413,11 +413,11 @@ img {
   border: 1px solid var(--brd-card-clr);
   border-top: none;
 }
-.service-overlay {
+.service-overlay-block {
   position: relative;
   overflow: hidden;
 }
-.overlay {
+.service-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -429,12 +429,12 @@ img {
   background-color: var(--logo-clr);
   opacity: 90%;
 }
-.service-link:hover .overlay,
-.service-link:focus .overlay {
+.service-link:hover .service-overlay,
+.service-link:focus .service-overlay {
   transform: translateY(0);
 }
 
-.overlay-text {
+.service-overlay-text {
   text-align: left;
   color: var(--btn-clr);
   font-size: 18px;
