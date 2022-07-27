@@ -262,6 +262,7 @@ img {
 
 .operation-overlay-text {
   font-weight: 700;
+  line-height: calc(16 / 14);
   text-align: center;
   color: var(--btn-clr);
   text-transform: uppercase;
